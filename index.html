@@ -3,7 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fahad Bagundang</title>
   </head>
-  <body></body>
+  <body>
+    <div class="nav-body">
+      <div class="header-name">
+        <h3>Fahad Bagundang</h3>
+      </div>
+
+      <div class="nav-container">
+        <a href="#intro-body">Home</a>
+        <a href="#about-body">About Me</a>
+        <a href="#skills-body">Skills</a>
+        <a href="#projects-body">Projects</a>
+        <a href="#contact-body">Contact</a>
+      </div>
+    </div>
+
+    <div id="intro-body">
+      <div class="intro-container">
+        <div class="img">
+          <img src="images/fahad.jpg" alt="My Profile" class="my-profile" />
+        </div>
+
+        <div class="intro-text">
+          <h3 class="name-text">Hi, I am Fahad Bagundang</h3>
+          <hr class="separator" />
+          <p class="dream-text">An aspiring web developer</p>
+          <a href="#about-body"
+            ><button class="get-started">Get Started!</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="about-body">
+      <div class="about-text">
+        <h1>About Me</h1>
+      </div>
+
+      <div class="about-para">
+        <p>
+          I am Fahad Bagundang and I want to be a web developer. I want to show
+          my skills and share my knowledge to everyone. As a student im willing
+          to learn and gain new knowledge to other people. Becoming a web
+          developer is the path I choose. Right now im just a college student
+          who have passion in web developing. I am a BSIS student and currently
+          studying in Sultan Kudarat State University. Most of the time I spend
+          my time practicing and enhancing my skills. As a college student I am
+          hardworking, willing to learn, active listener and im focus on my
+          goals. I also love playing video games and outdoor sports.
+        </p>
+      </div>
+    </div>
+
+    <div id="skills-body">
+      <div class="skills-container">
+        <div class="skill-text">
+          <h1>My Skills</h1>
+        </div>
+
+        <div class="skill-cards">
+          <div class="skill-card">
+            <img src="images/html.png" alt="" class="languange-img" />
+            <p>HTML</p>
+          </div>
+
+          <div class="skill-card">
+            <img src="images/css.png" alt="" class="languange-img" />
+            <p>CSS</p>
+          </div>
+
+          <div class="skill-card">
+            <img src="images/js.png" alt="" class="languange-img" />
+            <p>Javascript</p>
+          </div>
+
+          <div class="skill-card">
+            <img src="images/php.png" alt="" class="languange-img" />
+            <p>PHP</p>
+          </div>
+
+          <div class="skill-card">
+            <img src="images/mysql.png" alt="" class="languange-img" />
+            <p>MySql</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects-body">
+      <div class="projects-container">
+        <div class="project-text">
+          <h1>My Projects</h1>
+        </div>
+
+        <div class="project-cards">
+          <div class="project-card">
+            <img src="images/first_project.png" alt="" class="project-img" />
+            <p>
+              <span class="project-name">School Project:</span> Student Grade
+              Management
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img src="images/second_project.png" alt="" class="project-img" />
+            <p>
+              <span class="project-name">School Project:</span> Sales and
+              Inventory Management
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact-body">
+      <div class="contacts">
+        <div class="contact-area">
+          <img src="images/facebook.png" alt="" class="contact-icon" />
+          <p>
+            <a href="https://www.facebook.com/Mastah.Pahad/" target="_blank"
+              >Facebook</a
+            >
+          </p>
+        </div>
+
+        <div class="contact-area">
+          <img src="images/github.png" alt="" class="contact-icon" />
+          <p><a href="https://github.com/Pahad08" target="_blank">Github</a></p>
+        </div>
+
+        <div class="contact-area">
+          <img src="images/gmail.png" alt="" class="contact-icon" />
+          <p>
+            Gmail <br />
+            MastahPahad@gmail.com
+          </p>
+        </div>
+
+        <div class="contact-area">
+          <img src="images/phone.png" alt="" class="contact-icon" />
+          <p>
+            Phone Number <br />
+            09365896124
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="contact-text">
+          <h1>Contact Me</h1>
+          <p>If you have inquiry you can send me email through this form.</p>
+        </div>
+
+        <form action="" id="contact-form">
+          <div class="input-container">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+            />
+            <label for="name">Enter your name</label>
+          </div>
+
+          <div class="input-container">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter email"
+            />
+            <label for="email">Enter email</label>
+          </div>
+
+          <div class="input-container">
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+            ></textarea>
+            <label for="message">Message</label>
+          </div>
+
+          <button id="btn-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
