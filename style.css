@@ -46,14 +46,8 @@ a {
 }
 
 .nav-body {
-  background-color: var(--lightblue);
-  background-image: radial-gradient(
-      #44576d 0.6000000000000001px,
-      transparent 0.6000000000000001px
-    ),
-    radial-gradient(#44576d 0.6000000000000001px, #aac7d8 0.6000000000000001px);
-  background-size: 24px 24px;
-  background-position: 0 0, 12px 12px;
+  background: transparent;
+
   display: flex;
   justify-content: space-between;
   padding: 20px 100px;
@@ -107,6 +101,15 @@ a {
 
 .name-text {
   font-size: 1.9rem;
+  cursor: default;
+}
+
+.name-text span:hover {
+  color: var(--whitish);
+}
+
+.name-text span:has(~ span:hover) {
+  color: var(--whitish);
 }
 
 .separator {
@@ -182,8 +185,7 @@ a {
   text-align: center;
 }
 
-.skill-cards,
-.project-cards {
+.skill-cards {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -216,20 +218,58 @@ a {
   min-width: 110px;
 }
 
-.project-card {
-  border: 1px solid var(--darkblue);
-  border-radius: 10px;
+.project-cards {
+  border-radius: 5px;
   padding: 10px;
+  position: relative;
   background: var(--darkblue);
-  box-shadow: 0px 0px 5px;
-  max-width: 100%;
+  border-radius: 10px;
+}
+
+.projects-container {
+  width: 65%;
+}
+
+.project-cards button {
+  position: absolute;
+  padding: 17px;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
+  transition: 0.3s;
+  color: var(--whitish);
+}
+
+.project-cards button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#left {
+  top: 50%;
+  left: 0px;
+}
+
+#right {
+  top: 50%;
+  right: 0px;
+}
+
+.project-card {
+  display: none;
+}
+
+.active {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .project-img {
   border-radius: 5px;
-  width: 100%;
-  max-width: 500px;
-  min-width: 300px;
+  width: 90%;
+  height: 50%;
 }
 
 .project-card p {
@@ -366,4 +406,10 @@ textarea:focus {
 #btn-submit:hover {
   background: var(--darkblue);
   color: var(--lightblue);
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .nav-container {
+    display: none;
+  }
 }

@@ -11,9 +11,12 @@
     <title>Fahad Bagundang</title>
   </head>
   <body>
+    <!-- navigation body -->
     <div class="nav-body">
       <div class="header-name">
-        <h3>Fahad Bagundang</h3>
+        <a href="#intro-body" style="color: var(--darkblue)"
+          ><h3>Fahad Bagundang</h3></a
+        >
       </div>
 
       <div class="nav-container">
@@ -25,6 +28,7 @@
       </div>
     </div>
 
+    <!-- introduction body -->
     <div id="intro-body">
       <div class="intro-container">
         <div class="img">
@@ -32,7 +36,14 @@
         </div>
 
         <div class="intro-text">
-          <h3 class="name-text">Hi, I am Fahad Bagundang</h3>
+          <h3 class="name-text">
+            <span>H</span><span>i</span><span>&nbsp;</span><span>,</span
+            ><span>I</span><span>&nbsp;</span><span>a</span><span>m </span
+            ><span>F</span><span>a</span><span>h</span><span>a</span
+            ><span>d</span><span>&nbsp;</span><span>B</span><span>a</span
+            ><span>g</span><span>u</span><span>n</span><span>d</span
+            ><span>a</span><span>n</span><span>g</span>
+          </h3>
           <hr class="separator" />
           <p class="dream-text">An aspiring web developer</p>
           <a href="#about-body"
@@ -42,6 +53,7 @@
       </div>
     </div>
 
+    <!-- about me body -->
     <div id="about-body">
       <div class="about-text">
         <h1>About Me</h1>
@@ -62,6 +74,7 @@
       </div>
     </div>
 
+    <!-- my skills body -->
     <div id="skills-body">
       <div class="skills-container">
         <div class="skill-text">
@@ -97,6 +110,7 @@
       </div>
     </div>
 
+    <!-- projects body -->
     <div id="projects-body">
       <div class="projects-container">
         <div class="project-text">
@@ -104,25 +118,32 @@
         </div>
 
         <div class="project-cards">
-          <div class="project-card">
+          <button id="left"><i>&#10094;</i></button>
+
+          <div class="project-card active">
             <img src="images/first_project.png" alt="" class="project-img" />
-            <p>
+            <p class="project-title">
               <span class="project-name">School Project:</span> Student Grade
               Management
             </p>
+            <p class="project-num">1/</p>
           </div>
 
           <div class="project-card">
             <img src="images/second_project.png" alt="" class="project-img" />
-            <p>
+            <p class="project-title">
               <span class="project-name">School Project:</span> Sales and
               Inventory Management
             </p>
+            <p class="project-num">2/</p>
           </div>
+
+          <button id="right"><i>&#10095;</i></button>
         </div>
       </div>
     </div>
 
+    <!-- my contacts body -->
     <div id="contact-body">
       <div class="contacts">
         <div class="contact-area">
