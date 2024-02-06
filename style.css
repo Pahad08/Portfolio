@@ -283,6 +283,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 35px;
 }
 
 .about-text {
@@ -302,10 +303,14 @@ a {
 }
 
 .about-container {
+  display: none;
+  min-height: 100vh;
+}
+
+.show-about {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 }
 
 .about-picture {
@@ -358,13 +363,21 @@ a {
   align-items: center;
 }
 
+#projects-body {
+  padding-top: 35px;
+}
+
 .skills-container {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   gap: 20px;
+}
+
+.show-skill {
+  display: flex;
 }
 
 .skill-text,
@@ -509,11 +522,15 @@ a {
 }
 
 .projects-container {
-  display: flex;
+  display: none;
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+}
+
+.show-project {
+  display: flex;
 }
 
 .project-cards {
@@ -543,15 +560,11 @@ a {
   background: rgba(0, 0, 0, 1);
 }
 
-#left {
-  bottom: 110px;
-  right: 150px;
+.left {
   border-radius: 5px 0px 0px 5px;
 }
 
-#right {
-  bottom: 110px;
-  right: 120px;
+.right {
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -616,13 +629,18 @@ a {
 
 #contact-body {
   min-height: 100vh;
+  padding-top: 35px;
 }
 
 .contact-container {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+}
+
+.show-contact {
+  display: flex;
 }
 
 .contacts {
@@ -842,6 +860,7 @@ textarea:focus {
     justify-content: space-between;
     background: var(--whitish);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    padding: 20px;
   }
 
   .nav-links {
@@ -854,6 +873,80 @@ textarea:focus {
     display: none;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .show-nav {
+    display: flex;
+  }
+
+  .nav-links a:nth-child(1) {
+    animation: firstlink 0.5s ease-in-out;
+  }
+
+  .nav-links a:nth-child(2) {
+    animation: seclink 0.7s ease-in-out;
+  }
+
+  .nav-links a:nth-child(3) {
+    animation: thirdlink 0.9s ease-in-out;
+  }
+
+  .nav-links a:nth-child(4) {
+    animation: fourthlink 1.1s ease-in-out;
+  }
+
+  .nav-links a:nth-child(5) {
+    animation: fifthlink 1.3s ease-in-out;
+  }
+
+  @keyframes firstlink {
+    from {
+      transform: translateX(-1000px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes seclink {
+    from {
+      transform: translateX(-1200px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes thirdlink {
+    from {
+      transform: translateX(-1400px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes fourthlink {
+    from {
+      transform: translateX(-1600px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes fifthlink {
+    from {
+      transform: translateX(-1800px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
   }
 
   #menu-btn {
@@ -885,10 +978,10 @@ textarea:focus {
     flex-direction: column;
   }
 
-  #about-body,
   #projects-body,
+  #about-body,
   #contact-body {
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
   }
 
   .about-container {
@@ -942,7 +1035,7 @@ textarea:focus {
     justify-content: space-between;
     background: var(--whitish);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
-    padding: 20px;
+    padding: 15px;
   }
 
   .nav-links {
@@ -955,6 +1048,80 @@ textarea:focus {
     display: none;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .show-nav {
+    display: flex;
+  }
+
+  .nav-links a:nth-child(1) {
+    animation: firstlink 0.2s ease-in-out;
+  }
+
+  .nav-links a:nth-child(2) {
+    animation: seclink 0.4s ease-in-out;
+  }
+
+  .nav-links a:nth-child(3) {
+    animation: thirdlink 0.6s ease-in-out;
+  }
+
+  .nav-links a:nth-child(4) {
+    animation: fourthlink 0.8s ease-in-out;
+  }
+
+  .nav-links a:nth-child(5) {
+    animation: fifthlink 1s ease-in-out;
+  }
+
+  @keyframes firstlink {
+    from {
+      transform: translateX(-1000px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes seclink {
+    from {
+      transform: translateX(-1200px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes thirdlink {
+    from {
+      transform: translateX(-1400px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes fourthlink {
+    from {
+      transform: translateX(-1600px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes fifthlink {
+    from {
+      transform: translateX(-1800px);
+    }
+
+    to {
+      transform: translateX(0px);
+    }
   }
 
   #menu-btn {
@@ -990,19 +1157,19 @@ textarea:focus {
     padding: 100px 20px 20px 20px;
   }
 
-  #about-body,
-  #projects-body,
-  #contact-body {
-    padding: 20px;
-  }
-
   .about-container {
     flex-direction: column;
     gap: 20px;
   }
 
-  #project-body {
-    padding: 200px 50px 100px 50px;
+  #skills-body {
+    padding-top: 100px;
+  }
+
+  #projects-body,
+  #about-body,
+  #contact-body {
+    padding: 100px 20px 20px 20px;
   }
 
   .about-container {
@@ -1026,11 +1193,6 @@ textarea:focus {
 
   .project-title {
     width: 100%;
-  }
-
-  #contact-body {
-    flex-direction: column;
-    padding: 20px;
   }
 
   .contact-container {
