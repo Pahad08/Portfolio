@@ -17,18 +17,24 @@ const contact_body = document.querySelector("#contact-body");
 const contact_container = document.querySelector(".contact-container");
 const left_btn = document.querySelectorAll(".left");
 const right_btn = document.querySelectorAll(".right");
-
+const form = document.querySelector("#contact-form");
+const sender_name = document.querySelector("#name");
+const sender_email = document.querySelector("#email");
+const message = document.querySelector("#message");
+console.log(links);
 //Show the the nav links
 menu_btn.addEventListener("click", () => {
   nav_links.classList.toggle("show-nav");
 });
 
 //hide nav links when clicked
-links.forEach((element) => {
-  element.addEventListener("click", () => {
-    nav_links.classList.toggle("show-nav");
+if (window.innerWidth <= 1042) {
+  links.forEach((element) => {
+    element.addEventListener("click", () => {
+      nav_links.classList.remove("show-nav");
+    });
   });
-});
+}
 
 //add the the total projects
 project_num.forEach((element) => {
@@ -63,6 +69,11 @@ window.addEventListener("scroll", () => {
     nav.classList.add("nav-bg");
   } else {
     nav.classList.remove("nav-bg");
+    links[0].classList.add("active-link");
+    links[1].classList.remove("active-link");
+    // links[2].classList.remove("active-link");
+    // links[3].classList.remove("active-link");
+    // links[4].classList.remove("active-link");
     about_container.classList.remove("show-about");
     word_span.forEach((element, index) => {
       setTimeout(() => {
@@ -77,6 +88,11 @@ window.addEventListener("scroll", () => {
   ) {
     AddClass(about_container, "show-about", word_span);
     skills_container.classList.remove("show-skill");
+    links[0].classList.remove("active-link");
+    links[1].classList.add("active-link");
+    links[2].classList.remove("active-link");
+    links[3].classList.remove("active-link");
+    links[4].classList.remove("active-link");
   }
 
   if (
@@ -85,6 +101,11 @@ window.addEventListener("scroll", () => {
   ) {
     AddClass(skills_container, "show-skill");
     projects_container.classList.remove("show-project");
+    links[0].classList.remove("active-link");
+    links[1].classList.remove("active-link");
+    links[2].classList.add("active-link");
+    links[3].classList.remove("active-link");
+    links[4].classList.remove("active-link");
   }
 
   if (
@@ -93,6 +114,11 @@ window.addEventListener("scroll", () => {
   ) {
     AddClass(projects_container, "show-project");
     contact_container.classList.remove("show-contact");
+    links[0].classList.remove("active-link");
+    links[1].classList.remove("active-link");
+    links[2].classList.remove("active-link");
+    links[3].classList.add("active-link");
+    links[4].classList.remove("active-link");
   }
 
   if (
@@ -100,6 +126,11 @@ window.addEventListener("scroll", () => {
     Math.round(scrollpx) > project_offset + 300
   ) {
     AddClass(contact_container, "show-contact");
+    links[0].classList.remove("active-link");
+    links[1].classList.remove("active-link");
+    links[2].classList.remove("active-link");
+    links[3].classList.remove("active-link");
+    links[4].classList.add("active-link");
   }
 });
 
@@ -158,3 +189,32 @@ function PreviousProject() {
     }
   }
 }
+
+(function () {
+  emailjs.init({
+    publicKey: "zQFfugzX1B_rXXIdr",
+  });
+})();
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  let info = {
+    name: sender_name.value,
+    email: sender_email.value,
+    message: message.value,
+  };
+
+  let sendemail = await emailjs.send(
+    "service_dxljr1m",
+    "template_elwcjvn",
+    info
+  );
+
+  let response = await sendemail;
+
+  if (response.status == 200) {
+    Swal.fire("Email Sent!");
+    form.reset();
+  }
+});

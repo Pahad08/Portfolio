@@ -1,11 +1,11 @@
 :root {
-  --darkblue: #29353c;
-  --blue: #44576d;
-  --gray: #768a96;
-  --lightblue: #aac7d8;
-  --whitish: #dfebf6;
-  --lighgray: #e6e6e6;
-  --black: #000;
+  --background: #242629;
+  --headline: #fffffe;
+  --paragraph: #94a1b2;
+  --link: #7f5af0;
+  --card: #16161a;
+  --card_headline: #fffffe;
+  --input: #16161a;
 }
 
 * {
@@ -27,7 +27,7 @@ a {
 }
 
 .header-name {
-  color: var(--darkblue);
+  color: var(--paragraph);
   animation: header 0.5s ease-in-out;
 }
 
@@ -42,7 +42,7 @@ a {
 }
 
 .header-name h3:hover {
-  color: var(--whitish);
+  color: var(--link);
   transition: 0.3s;
 }
 
@@ -56,7 +56,7 @@ a {
 }
 
 .nav-bg {
-  background: var(--whitish);
+  background: var(--card);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
   transition: 0.3s;
 }
@@ -143,13 +143,34 @@ a {
 }
 
 .nav-container a {
-  color: var(--darkblue);
+  color: var(--paragraph);
   font-size: 1.1rem;
   transition: 0.3s;
+  position: relative;
+}
+
+.nav-container .active-link::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--headline);
+  animation: line_bottom 0.5s ease-in-out;
+}
+
+@keyframes line_bottom {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .nav-container a:hover {
-  color: var(--whitish);
+  color: var(--link);
 }
 
 #menu-btn {
@@ -158,18 +179,7 @@ a {
 
 #intro-body {
   min-height: 100vh;
-  background-color: var(--lightblue);
-  opacity: 1;
-  background-image: radial-gradient(
-      #44576d 1.2000000000000002px,
-      transparent 1.2000000000000002px
-    ),
-    radial-gradient(
-      var(--blue) 1.2000000000000002px,
-      var(--lightblue) 1.2000000000000002px
-    );
-  background-size: 48px 48px;
-  background-position: 0 0, 24px 24px;
+  background-color: var(--background);
 }
 
 .intro-container {
@@ -192,22 +202,16 @@ a {
 @keyframes profile {
   0% {
     transform: translateX(-1000px);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
   }
 
   100% {
     transform: translateX(0px);
-    opacity: 1;
   }
 }
 
 .intro-text {
   position: relative;
-  color: var(--darkblue);
+  color: var(--headline);
   text-align: center;
   animation: introtext 1.3s ease-in-out;
 }
@@ -228,12 +232,12 @@ a {
 }
 
 .name-text span:hover {
-  color: var(--whitish);
+  color: var(--paragraph);
   transition: 0.3s;
 }
 
 .name-text span:has(~ span:hover) {
-  color: var(--whitish);
+  color: var(--paragraph);
   transition: 0.3s;
 }
 
@@ -241,7 +245,7 @@ a {
   width: 50%;
   height: 0.2rem;
   margin: 10px auto;
-  background: var(--gray);
+  background: var(--headline);
   border: none;
   animation: separator 1.3s ease-in-out;
 }
@@ -266,20 +270,20 @@ a {
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 5px;
-  color: var(--whitish);
+  color: var(--headline);
   cursor: pointer;
-  background: var(--darkblue);
+  background: var(--link);
   transition: 0.3s;
 }
 
 .get-started:hover {
-  background: var(--blue);
-  color: var(--black);
+  background: var(--card);
+  color: var(--paragraph);
 }
 
 #about-body {
   min-height: 100vh;
-  background: var(--blue);
+  background: var(--card);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,8 +292,8 @@ a {
 
 .about-text {
   font-size: 1.2rem;
-  color: var(--black);
-  animation: about_text 1.3s ease-in-out;
+  color: var(--headline);
+  animation: about_text 1s ease-in-out;
 }
 
 @keyframes about_text {
@@ -322,10 +326,10 @@ a {
 .about_pic {
   width: 100%;
   max-width: 500px;
-  border: 5px solid var(--blue);
+  border: 5px solid var(--background);
   border-radius: 50%;
   box-shadow: 0px 0px 10px;
-  animation: about_pic 1.3s ease-in-out;
+  animation: about_pic 1s ease-in-out;
 }
 
 @keyframes about_pic {
@@ -343,7 +347,7 @@ a {
   font-size: 1.2rem;
   line-height: 2.2rem;
   text-align: justify;
-  color: var(--lightblue);
+  color: var(--paragraph);
   flex-basis: 47%;
   display: flex;
   flex-direction: column;
@@ -353,6 +357,14 @@ a {
 
 .word {
   opacity: 0;
+}
+
+#skills-body {
+  background: var(--background);
+}
+
+#projects-body {
+  background: var(--card);
 }
 
 #skills-body,
@@ -384,7 +396,8 @@ a {
 .project-text {
   font-size: 1.2rem;
   text-align: center;
-  animation: text 1.3s ease-in-out;
+  animation: text 1s ease-in-out;
+  color: var(--headline);
 }
 
 @keyframes text {
@@ -407,11 +420,11 @@ a {
 
 .skill-card {
   cursor: pointer;
-  background: var(--darkblue);
+  background: var(--card);
   border-radius: 5px;
   padding: 30px;
   transition: 0.3s;
-  box-shadow: 0px 0px 5px;
+  box-shadow: 0px 0px 10px;
   position: relative;
   overflow: hidden;
 }
@@ -496,7 +509,7 @@ a {
 
 .skill-card .skill-info {
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
   top: 0;
@@ -510,7 +523,7 @@ a {
 .skill-card p {
   text-align: center;
   font-size: 1.2rem;
-  color: var(--whitish);
+  color: var(--card_headline);
   font-weight: bold;
 }
 
@@ -535,7 +548,7 @@ a {
 
 .project-cards {
   padding: 10px;
-  background: var(--darkblue);
+  background: var(--background);
   border-radius: 10px;
   max-width: 1000px;
   overflow: hidden;
@@ -553,7 +566,7 @@ a {
   font-weight: bold;
   background: transparent;
   transition: 0.3s;
-  color: var(--whitish);
+  color: var(--headline);
 }
 
 .project-cards button:hover {
@@ -584,7 +597,14 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: project_title 1.3s ease-in-out;
+  animation: project_title 1s ease-in-out;
+}
+
+.project-title > p {
+  color: var(--paragraph);
+  font-size: clamp(1rem, 100vh, 1.2rem);
+
+  text-align: center;
 }
 
 @keyframes project_title {
@@ -597,12 +617,6 @@ a {
   }
 }
 
-.project-title p {
-  font-size: clamp(1rem, 100vh, 1.2rem);
-  color: var(--whitish);
-  text-align: center;
-}
-
 .project-title p:first-child span {
   font-weight: bold;
 }
@@ -610,7 +624,7 @@ a {
 .project-img {
   border-radius: 5px;
   width: 70%;
-  animation: project_img 1.3s ease-in-out;
+  animation: project_img 1s ease-in-out;
 }
 
 @keyframes project_img {
@@ -630,6 +644,7 @@ a {
 #contact-body {
   min-height: 100vh;
   padding-top: 35px;
+  background: var(--background);
 }
 
 .contact-container {
@@ -654,7 +669,7 @@ a {
 }
 
 .contacts .contact-area:nth-child(1) {
-  animation: contact1 0.6s ease-in-out;
+  animation: contact1 0.3s ease-in-out;
 }
 
 @keyframes contact1 {
@@ -668,7 +683,7 @@ a {
 }
 
 .contacts .contact-area:nth-child(2) {
-  animation: contact2 0.9s ease-in-out;
+  animation: contact2 0.5s ease-in-out;
 }
 
 @keyframes contact2 {
@@ -682,7 +697,7 @@ a {
 }
 
 .contacts .contact-area:nth-child(3) {
-  animation: contact3 1.2s ease-in-out;
+  animation: contact3 0.7s ease-in-out;
 }
 
 @keyframes contact3 {
@@ -696,7 +711,7 @@ a {
 }
 
 .contacts .contact-area:nth-child(4) {
-  animation: contact4 1.5s ease-in-out;
+  animation: contact4 0.9s ease-in-out;
 }
 
 @keyframes contact4 {
@@ -720,13 +735,17 @@ a {
 }
 
 .contact-area p a {
-  color: var(--black);
+  color: var(--paragraph);
   text-decoration: underline;
   transition: 0.2s;
 }
 
+.contact-area p {
+  color: var(--paragraph);
+}
+
 .contact-area p a:hover {
-  color: var(--gray);
+  color: var(--link);
 }
 
 .contact-icon {
@@ -736,7 +755,8 @@ a {
 
 .contact-text {
   font-size: 1.2rem;
-  animation: text 1.3s ease-in-out;
+  animation: text 1s ease-in-out;
+  color: var(--headline);
 }
 
 @keyframes identifier {
@@ -744,6 +764,7 @@ a {
 
 .contact-text p {
   font-size: 1rem;
+  color: var(--paragraph);
 }
 .contact-form {
   width: 47%;
@@ -762,24 +783,24 @@ a {
 
 .input-container {
   position: relative;
-  overflow: hidden;
 }
 
 label {
   position: absolute;
-  left: 11px;
+  left: 10px;
   top: 10px;
-  z-index: -1;
+  z-index: 1;
   transition: 0.3s;
-  animation: label 1.3s ease-in-out;
+  animation: label 1s ease-in-out;
+  color: var(--headline);
 }
 
 @keyframes label {
   from {
-    transform: translateX(-1000px);
+    opacity: 0;
   }
   to {
-    transform: translateX(0px);
+    opacity: 1;
   }
 }
 
@@ -787,16 +808,15 @@ input:focus + label,
 textarea:focus + label {
   left: 10px;
   top: -10px;
-  background: #fefefe;
-  z-index: 1;
+  background: var(--background);
 }
 
 input:not(:placeholder-shown) + label,
 textarea:not(:placeholder-shown) + label {
   left: 10px;
   top: -10px;
-  background: #fefefe;
-  z-index: 1;
+  background: var(--background);
+  z-index: 2;
 }
 
 input,
@@ -804,11 +824,12 @@ textarea {
   padding: 15px;
   width: 100%;
   resize: vertical;
-  border: 1px solid var(--gray);
+  border: 1px solid var(--input);
   border-radius: 5px;
   outline: none;
   background: transparent;
-  animation: inputs 1.3s ease-in-out;
+  animation: inputs 1s ease-in-out;
+  color: var(--headline);
 }
 
 @keyframes inputs {
@@ -833,10 +854,10 @@ textarea:focus {
   padding: 15px;
   cursor: pointer;
   font-size: 1.3rem;
-  color: var(--black);
-  background: var(--blue);
+  color: var(--headline);
+  background: var(--link);
   transition: 0.3s;
-  animation: btnsubmit 1.3s ease-in-out;
+  animation: btnsubmit 1s ease-in-out;
 }
 
 @keyframes btnsubmit {
@@ -858,7 +879,7 @@ textarea:focus {
   .nav-body {
     display: flex;
     justify-content: space-between;
-    background: var(--whitish);
+    background: var(--card);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
     padding: 20px;
   }
@@ -1033,7 +1054,7 @@ textarea:focus {
   .nav-body {
     display: flex;
     justify-content: space-between;
-    background: var(--whitish);
+    background: var(--card);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
     padding: 15px;
   }
@@ -1154,7 +1175,7 @@ textarea:focus {
   }
 
   #intro-body {
-    padding: 100px 20px 20px 20px;
+    padding: 80px 20px 20px 20px;
   }
 
   .about-container {
