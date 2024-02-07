@@ -71,9 +71,6 @@ window.addEventListener("scroll", () => {
     nav.classList.remove("nav-bg");
     links[0].classList.add("active-link");
     links[1].classList.remove("active-link");
-    // links[2].classList.remove("active-link");
-    // links[3].classList.remove("active-link");
-    // links[4].classList.remove("active-link");
     about_container.classList.remove("show-about");
     word_span.forEach((element, index) => {
       setTimeout(() => {
@@ -91,8 +88,6 @@ window.addEventListener("scroll", () => {
     links[0].classList.remove("active-link");
     links[1].classList.add("active-link");
     links[2].classList.remove("active-link");
-    links[3].classList.remove("active-link");
-    links[4].classList.remove("active-link");
   }
 
   if (
@@ -101,11 +96,9 @@ window.addEventListener("scroll", () => {
   ) {
     AddClass(skills_container, "show-skill");
     projects_container.classList.remove("show-project");
-    links[0].classList.remove("active-link");
     links[1].classList.remove("active-link");
     links[2].classList.add("active-link");
     links[3].classList.remove("active-link");
-    links[4].classList.remove("active-link");
   }
 
   if (
@@ -114,8 +107,6 @@ window.addEventListener("scroll", () => {
   ) {
     AddClass(projects_container, "show-project");
     contact_container.classList.remove("show-contact");
-    links[0].classList.remove("active-link");
-    links[1].classList.remove("active-link");
     links[2].classList.remove("active-link");
     links[3].classList.add("active-link");
     links[4].classList.remove("active-link");
@@ -126,9 +117,6 @@ window.addEventListener("scroll", () => {
     Math.round(scrollpx) > project_offset + 300
   ) {
     AddClass(contact_container, "show-contact");
-    links[0].classList.remove("active-link");
-    links[1].classList.remove("active-link");
-    links[2].classList.remove("active-link");
     links[3].classList.remove("active-link");
     links[4].classList.add("active-link");
   }
