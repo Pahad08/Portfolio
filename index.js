@@ -56,7 +56,7 @@ function AddClass(element, classname, word_span = "") {
   }
 }
 
-//when scrolling add bg to the nav
+//when scrolling add bg to the nav and display elements
 window.addEventListener("scroll", () => {
   let scrollpx = window.scrollY;
   let intro_offset = intro_container.offsetTop;
@@ -65,7 +65,7 @@ window.addEventListener("scroll", () => {
   let project_offset = projects_body.offsetTop;
   let contact_offset = contact_body.offsetTop;
 
-  if (scrollpx !== 0) {
+  if (scrollpx !== 0 && window.innerWidth > 1024) {
     nav.classList.add("nav-bg");
   } else {
     nav.classList.remove("nav-bg");
