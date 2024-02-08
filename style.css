@@ -1147,15 +1147,15 @@ textarea:focus {
     cursor: pointer;
     font-size: 1.5rem;
     transition: 0.1s;
-    border: 2px solid var(--darkblue);
+    border: 2px solid var(--headline);
     padding: 5px 10px;
     border-radius: 5px;
-    color: var(--darkblue);
+    color: var(--paragraph);
     align-self: flex-start;
   }
 
   #menu-btn:hover {
-    outline: 3px solid rgba(0, 0, 0, 0.5);
+    outline: 2px solid var(--headline);
   }
 
   .intro-container {
