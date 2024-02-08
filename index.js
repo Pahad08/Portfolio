@@ -21,7 +21,7 @@ const form = document.querySelector("#contact-form");
 const sender_name = document.querySelector("#name");
 const sender_email = document.querySelector("#email");
 const message = document.querySelector("#message");
-console.log(links);
+
 //Show the the nav links
 menu_btn.addEventListener("click", () => {
   nav_links.classList.toggle("show-nav");

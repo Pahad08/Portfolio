@@ -293,28 +293,19 @@ a {
 .about-text {
   font-size: 1.2rem;
   color: var(--headline);
-  animation: about_text 1s ease-in-out;
-}
-
-@keyframes about_text {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .about-container {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
   min-height: 100vh;
 }
 
 .show-about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
 }
 
 .about-picture {
@@ -329,17 +320,6 @@ a {
   border: 5px solid var(--background);
   border-radius: 50%;
   box-shadow: 0px 0px 10px;
-  animation: about_pic 1s ease-in-out;
-}
-
-@keyframes about_pic {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
 }
 
 .about-para {
@@ -377,7 +357,8 @@ a {
 }
 
 .skills-container {
-  display: none;
+  opacity: 0;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -386,25 +367,25 @@ a {
 }
 
 .show-skill {
-  display: flex;
+  opacity: 1;
+  animation: skill 1s ease-in-out;
+}
+
+@keyframes skill {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 .skill-text,
 .project-text {
   font-size: 1.2rem;
   text-align: center;
-  animation: text 1s ease-in-out;
   color: var(--headline);
-}
-
-@keyframes text {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .skill-cards {
@@ -424,76 +405,6 @@ a {
   box-shadow: 0px 0px 10px;
   position: relative;
   overflow: hidden;
-}
-
-.skill-cards .skill-card:nth-child(1) {
-  animation: skill_card1 0.6s ease-in-out;
-}
-
-@keyframes skill_card1 {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-.skill-cards .skill-card:nth-child(2) {
-  animation: skill_card2 0.9s ease-in-out;
-}
-
-@keyframes skill_card2 {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-.skill-cards .skill-card:nth-child(3) {
-  animation: skill_card3 1.2s ease-in-out;
-}
-
-@keyframes skill_card3 {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-.skill-cards .skill-card:nth-child(4) {
-  animation: skill_card4 1.5s ease-in-out;
-}
-
-@keyframes skill_card4 {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-.skill-cards .skill-card:nth-child(5) {
-  animation: skill_card5 1.8s ease-in-out;
-}
-
-@keyframes skill_card5 {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
 }
 
 .skill-card:hover img {
@@ -532,7 +443,9 @@ a {
 }
 
 .projects-container {
-  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: center;
@@ -540,7 +453,7 @@ a {
 }
 
 .show-project {
-  display: flex;
+  opacity: 1;
 }
 
 .project-cards {
@@ -594,24 +507,12 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: project_title 1s ease-in-out;
 }
 
 .project-title > p {
   color: var(--paragraph);
   font-size: clamp(1rem, 100vh, 1.2rem);
-
   text-align: center;
-}
-
-@keyframes project_title {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .project-title p:first-child span {
@@ -622,16 +523,6 @@ a {
   border-radius: 5px;
   width: 70%;
   animation: project_img 1s ease-in-out;
-}
-
-@keyframes project_img {
-  from {
-    transform: translateX(-1000px);
-  }
-
-  to {
-    transform: translateY(0px);
-  }
 }
 
 .project-name {
@@ -645,14 +536,26 @@ a {
 }
 
 .contact-container {
-  display: none;
+  opacity: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
+@keyframes contact {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
 .show-contact {
-  display: flex;
+  opacity: 1;
+  animation: contact 1s ease-in-out;
 }
 
 .contacts {
@@ -663,62 +566,6 @@ a {
   align-items: center;
   text-align: center;
   width: 50%;
-}
-
-.contacts .contact-area:nth-child(1) {
-  animation: contact1 0.3s ease-in-out;
-}
-
-@keyframes contact1 {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.contacts .contact-area:nth-child(2) {
-  animation: contact2 0.5s ease-in-out;
-}
-
-@keyframes contact2 {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.contacts .contact-area:nth-child(3) {
-  animation: contact3 0.7s ease-in-out;
-}
-
-@keyframes contact3 {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.contacts .contact-area:nth-child(4) {
-  animation: contact4 0.9s ease-in-out;
-}
-
-@keyframes contact4 {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .contacts::before {
@@ -752,11 +599,7 @@ a {
 
 .contact-text {
   font-size: 1.2rem;
-  animation: text 1s ease-in-out;
   color: var(--headline);
-}
-
-@keyframes identifier {
 }
 
 .contact-text p {
@@ -788,17 +631,7 @@ label {
   top: 10px;
   z-index: 1;
   transition: 0.3s;
-  animation: label 1s ease-in-out;
   color: var(--headline);
-}
-
-@keyframes label {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 input:focus + label,
@@ -854,17 +687,6 @@ textarea:focus {
   color: var(--headline);
   background: var(--link);
   transition: 0.3s;
-  animation: btnsubmit 1s ease-in-out;
-}
-
-@keyframes btnsubmit {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
 }
 
 #btn-submit:hover {
@@ -984,7 +806,7 @@ textarea:focus {
   }
 
   #intro-body {
-    padding: 100px 20px;
+    padding: 100px 20px 40px 20px;
   }
 
   .intro-container {
@@ -1172,7 +994,7 @@ textarea:focus {
   }
 
   #intro-body {
-    padding: 100px 20px;
+    padding: 100px 20px 40px 20px;
   }
 
   .about-container {
@@ -1180,12 +1002,15 @@ textarea:focus {
     gap: 20px;
   }
 
+  #about-body {
+    padding: 100px 20px;
+  }
+
   #skills-body {
     padding: 100px 20px;
   }
 
   #projects-body,
-  #about-body,
   #contact-body {
     padding: 100px 20px;
   }
@@ -1237,4 +1062,7 @@ textarea:focus {
   .contact-text {
     font-size: 1rem;
   }
+}
+
+@media screen and (max-width: 320px) {
 }
