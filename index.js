@@ -21,6 +21,10 @@ const form = document.querySelector("#contact-form");
 const sender_name = document.querySelector("#name");
 const sender_email = document.querySelector("#email");
 const message = document.querySelector("#message");
+const about_pic = document.querySelector(".about_pic");
+const skill_cards = document.querySelectorAll(".skill-card");
+const project_pic = document.querySelectorAll(".project-img");
+const contact_area = document.querySelectorAll(".contact-area");
 
 //Show the the nav links
 menu_btn.addEventListener("click", () => {
@@ -65,13 +69,14 @@ window.addEventListener("scroll", () => {
   let project_offset = projects_body.offsetTop;
   let contact_offset = contact_body.offsetTop;
 
-  if (scrollpx !== 0 && window.innerWidth > 1024) {
+  if (scrollpx !== 0) {
     nav.classList.add("nav-bg");
   } else {
     nav.classList.remove("nav-bg");
     links[0].classList.add("active-link");
     links[1].classList.remove("active-link");
     about_container.classList.remove("show-about");
+    about_pic.classList.remove("show-pic");
     word_span.forEach((element, index) => {
       setTimeout(() => {
         element.style.opacity = 0;
@@ -84,7 +89,11 @@ window.addEventListener("scroll", () => {
     Math.round(scrollpx) > intro_offset + 300
   ) {
     AddClass(about_container, "show-about", word_span);
+    about_pic.classList.add("show-pic");
     skills_container.classList.remove("show-skill");
+    skill_cards.forEach((element) => {
+      element.classList.remove("show-card");
+    });
     links[0].classList.remove("active-link");
     links[1].classList.add("active-link");
     links[2].classList.remove("active-link");
@@ -95,6 +104,12 @@ window.addEventListener("scroll", () => {
     Math.round(scrollpx) > about_offset + 300
   ) {
     AddClass(skills_container, "show-skill");
+    skill_cards.forEach((element) => {
+      element.classList.add("show-card");
+    });
+    project_pic.forEach((element) => {
+      element.classList.remove("show-projimg");
+    });
     projects_container.classList.remove("show-project");
     links[1].classList.remove("active-link");
     links[2].classList.add("active-link");
@@ -106,6 +121,12 @@ window.addEventListener("scroll", () => {
     Math.round(scrollpx) > skill_offset + 300
   ) {
     AddClass(projects_container, "show-project");
+    project_pic.forEach((element) => {
+      element.classList.add("show-projimg");
+    });
+    contact_area.forEach((element) => {
+      element.classList.remove("show-contactarea");
+    });
     contact_container.classList.remove("show-contact");
     links[2].classList.remove("active-link");
     links[3].classList.add("active-link");
@@ -117,6 +138,9 @@ window.addEventListener("scroll", () => {
     Math.round(scrollpx) > project_offset + 300
   ) {
     AddClass(contact_container, "show-contact");
+    contact_area.forEach((element) => {
+      element.classList.add("show-contactarea");
+    });
     links[3].classList.remove("active-link");
     links[4].classList.add("active-link");
   }
