@@ -217,16 +217,41 @@ form.addEventListener("submit", async (e) => {
     message: message.value,
   };
 
-  let sendemail = await emailjs.send(
-    "service_dxljr1m",
-    "template_elwcjvn",
-    info
-  );
+  Swal.fire({
+    title: "Please wait...",
+    html: "Submitting your email",
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    willOpen: () => {
+      Swal.showLoading();
+    },
+  });
 
-  let response = await sendemail;
+  try {
+    let sendemail = await emailjs.send(
+      "service_dxljr1m",
+      "template_elwcjvn",
+      info
+    );
 
-  if (response.status == 200) {
-    Swal.fire("Email Sent!");
-    form.reset();
+    let response = await sendemail;
+
+    if (response.status == 200) {
+      Swal.close();
+      Swal.fire({
+        icon: "success",
+        title: "Form Submitted Successfully!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      form.reset();
+    }
+  } catch (error) {
+    console.error("Error submitting email:", error);
+    Swal.fire({
+      icon: "error",
+      Title: "Failed sending email!",
+      text: "An error occurred while submitting the email!",
+    });
   }
 });

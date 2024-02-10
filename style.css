@@ -194,7 +194,7 @@ a {
 .my-profile {
   border-radius: 50%;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   box-shadow: 0px 0px 5px;
   animation: profile 1s ease-in-out;
 }
@@ -398,7 +398,6 @@ a {
   background: var(--card);
   border-radius: 5px;
   padding: 30px;
-  transition: 0.3s;
   box-shadow: 0px 0px 10px;
   position: relative;
   overflow: hidden;
@@ -1120,5 +1119,13 @@ textarea:focus {
 
   .contact-text {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  #intro-body,
+  #skills-body,
+  #projects-body {
+    padding: 0rem 1.1rem;
   }
 }
